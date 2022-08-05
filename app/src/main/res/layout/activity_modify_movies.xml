@@ -15,12 +15,13 @@
         android:text="Movie ID" />
 
     <EditText
-        android:id="@+id/readOnlyID"
+        android:id="@+id/etID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        />
+        android:inputType="textPersonName"
+        android:text="Name" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -30,12 +31,12 @@
         android:text="Movie Title" />
 
     <EditText
-        android:id="@+id/modifyTitle"
+        android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-
+        android:inputType="textPersonName"
         android:text="Name" />
 
     <TextView
@@ -46,11 +47,12 @@
         android:text="Genre" />
 
     <EditText
-        android:id="@+id/modifyGenre"
+        android:id="@+id/etGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
+        android:inputType="textPersonName"
         android:text="Name" />
 
     <TextView
@@ -61,11 +63,12 @@
         android:text="Year" />
 
     <EditText
-        android:id="@+id/modifyYear"
+        android:id="@+id/etYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:ems="10" />
+        android:ems="10"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/tvRating"
@@ -75,7 +78,7 @@
         android:text="Rating" />
 
     <Spinner
-        android:id="@+id/modifyRatingSpinner"
+        android:id="@+id/ratingSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />

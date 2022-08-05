@@ -18,15 +18,11 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
-    //test push
-
     Spinner spinner;
     String rating;
     TextView tvID, tvTitle, tvGenre, tvYear;
     EditText etID, etTitle, etGenre, etYear;
     Button btnInsert, btnShowList;
-    ArrayList<Movie> al;
-    ArrayAdapter<Movie> aa;
 
     Movie data;
 
@@ -39,17 +35,26 @@ public class MainActivity extends AppCompatActivity {
         tvTitle = findViewById(R.id.tvTitle);
         tvGenre = findViewById(R.id.tvGenre);
         tvYear = findViewById(R.id.tvYear);
+        etID = findViewById(R.id.etID);
         etTitle = findViewById(R.id.etTitle);
         etGenre = findViewById(R.id.etGenre);
         etYear = findViewById(R.id.etYear);
         btnInsert = findViewById(R.id.btnInsert);
         btnShowList = findViewById(R.id.btnShowList);
+
         spinner = findViewById(R.id.ratingSpinner);
+
+        ArrayList<Movie> al;
+        ArrayAdapter<Movie> aa;
 
         al = new ArrayList<Movie>();
         //changed for CA
         aa = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, al);
+
+
+        Intent i = getIntent();
+        data = (Movie) i.getSerializableExtra("data");
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

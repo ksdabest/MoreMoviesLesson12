@@ -132,18 +132,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 + COLUMN_YEAR + " INTEGER ," + COLUMN_RATING + " INTEGER ) ";
         db.execSQL(createNoteTableSql);
         Log.i("info", "created tables");
-
-        //dummy record
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_TITLE, "Ju On");
-        values.put(COLUMN_GENRE, "Horror");
-        values.put(COLUMN_RATING, "PG13");
-        values.put(COLUMN_YEAR, "2014");
-
-        db.insert(TABLE_MOVIES, null, values);
-
-        Log.i("info", "dummy created");
-
     }
 
     @Override
