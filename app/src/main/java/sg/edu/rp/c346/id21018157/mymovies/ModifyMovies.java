@@ -11,8 +11,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class ModifyMovies extends AppCompatActivity {
-
-    TextView tvID, tvTitle, tvGenre, tvYear;
     EditText etID, etTitle, etGenre, etYear;
     Button btnUpdate, btnDelete, btnCancel;
     Spinner ratingSpinner;
@@ -24,15 +22,15 @@ public class ModifyMovies extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_movies);
 
-        tvID = findViewById(R.id.tvID);
-        tvTitle = findViewById(R.id.tvTitle);
-        tvGenre = findViewById(R.id.tvGenre);
-        tvYear = findViewById(R.id.tvYear);
-        etID = findViewById(R.id.etID);
-        etTitle = findViewById(R.id.etTitle);
-        etGenre = findViewById(R.id.etGenre);
-        etYear = findViewById(R.id.etYear);
-        ratingSpinner = findViewById(R.id.ratingSpinner);
+        etID = findViewById(R.id.readOnlyID);
+        etTitle = findViewById(R.id.modifyTitle);
+        etGenre = findViewById(R.id.modifyGenre);
+        etYear = findViewById(R.id.modifyYear);
+        ratingSpinner = findViewById(R.id.modifyRatingSpinner);
+
+        btnUpdate = findViewById(R.id.btnUpdate);
+        btnDelete = findViewById(R.id.btnDelete);
+        btnCancel = findViewById(R.id.btnCancel);
 
 
         //initialise variables
@@ -41,7 +39,8 @@ public class ModifyMovies extends AppCompatActivity {
 
         etTitle.setText(data.getTitle());
         etGenre.setText(data.getGenre());
-        etYear.setText(data.getYear());
+        etYear.setText("" + data.getYear());
+
         String rating = data.getRating();
 
 
