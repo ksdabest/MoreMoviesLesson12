@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -68,6 +69,8 @@ public class ShowMovies extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int
                     position, long identity) {
                 Movie data = al.get(position);
+                Log.i("debug", String.valueOf(position));
+
                 Intent i = new Intent(ShowMovies.this,
                         ModifyMovies.class);
                 i.putExtra("data", data);
