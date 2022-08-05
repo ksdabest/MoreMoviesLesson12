@@ -1,8 +1,8 @@
 package sg.edu.rp.c346.id21018157.mymovies;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -78,16 +78,53 @@ public class ModifyMovies extends AppCompatActivity {
             public void onClick(View v) {
                 DBHelper db = new DBHelper(ModifyMovies.this);
                 db.deleteMovie(data.getId());
+                android.app.AlertDialog.Builder myBuilder = new android.app.AlertDialog.Builder(ModifyMovies.this);
+                myBuilder.setTitle("Danger");
+                myBuilder.setMessage("Are you sure you want to delete the movie " + etTitle.getText().toString() );
+                myBuilder.setCancelable(false);
 
-                finish();
+                //Configure the 'positive' button
+                myBuilder.setPositiveButton("DELETE", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        finish();
+                    }
+                });
+
+                //configure the 'neutral' button
+                myBuilder.setNeutralButton("Cancel", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
             }
+
         });
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                AlertDialog.Builder myBuilder = new AlertDialog.Builder(ModifyMovies.this);
+                myBuilder.setTitle("Danger");
+                myBuilder.setMessage("Are you sure you want to discard the changes");
+                myBuilder.setCancelable(false);
+
+                //Configure the 'positive' button
+                myBuilder.setPositiveButton("DISCARD", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        finish();
+                    }
+                });
+
+
+
+                //configure the 'neutral' button
+                myBuilder.setNegativeButton("Cancel", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
             }
+
         });
 
     }
